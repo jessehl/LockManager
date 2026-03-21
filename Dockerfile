@@ -49,5 +49,6 @@ RUN pytest
 RUN echo "tests completed" >> /test_results.log
 
 FROM finalimage AS production
+COPY --from curlimages/curl:latest /usr/bin/curl /usr/bin/curl
 COPY --from=test /test_results.log /test_results.log
 ENTRYPOINT ["/server"]
