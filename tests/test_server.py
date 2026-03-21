@@ -13,7 +13,7 @@ SERVER_NAME = "TestServer"
 
 # Start the server, wait for one second so that it can properly boot.
 subprocess.Popen(['/server', PORT, 'h', '0', 'a', API_KEY, 't', str(NUMBER_OF_THREADS), 'n', SERVER_NAME])
-time.sleep(1)
+time.sleep(10)
 
 
 def test_no_locks():
