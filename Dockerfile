@@ -38,7 +38,7 @@ FROM finalimage AS dev
 CMD [ "/bin/bash" ]
 
 # Run tests in a Python image based on ubuntu.
-FROM fnndsc/ubuntu-python3:ubuntu20.04-python3.8.10 as test
+FROM python:3.11.15-trixie AS test
 COPY --from=finalimage /config.txt /
 COPY --from=finalimage /server /
 
