@@ -13,6 +13,14 @@ services:
         target: /privateKey.key
       - source: API-key
         target: config.txt
+
+healthcheck:
+      test: ["CMD", "curl", "http://0.0.0.0:6789/status"]
+      interval: 60s
+      timeout: 2s
+      retries: 2
+      start_period: 20s
+      
 secrets:
   key:
     file: D:\your\own\directory\certs\customkey.key # change this if you want to use https
