@@ -14,7 +14,7 @@ services:
       - source: API-key
         target: config.txt
 
-healthcheck:
+    healthcheck:
       test: ["CMD", "curl", "http://0.0.0.0:6789/status"]
       interval: 60s
       timeout: 2s
